@@ -24,25 +24,21 @@ var Crypto = {
 		for (i = 0; i < splitted.length; i++) {
 			if (i === 0 || i % 2 === 0) {
 				reversed.push(splitted[splitted.length - 1 - i]);
-				// console.log(i);
 			}
 
 		}
 		for (i = 0; i < splitted.length; i++) {
 			if (i % 2 === 1) {
 				reversed.push(splitted[splitted.length - 1 - i]);
-				// console.log(i);
 			}
 
 		}
 		return reversed.join('');
 	},
 	decode: function(enc) {
-		//642531
 		var decd = [],
 			last = enc.slice(Math.ceil(enc.length / 2)),
 			first = enc.slice(0, Math.ceil(enc.length / 2));
-		// console.log("last: %s \nfirst: %s",last,first);
 		if (enc.length % 2 === 0) {
 			for (var i = 0; i < first.length; i++) {
 				decd.push(last[last.length - 1 - i]);
@@ -54,7 +50,6 @@ var Crypto = {
 				decd.push(last[last.length - 1 - i]);
 			}
 		}
-		// console.log(last);
 		return decd.join('');
 	},
 	noTag:function(str){
