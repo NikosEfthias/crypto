@@ -30,7 +30,3 @@ crypto.noTag("<script>alert('hi')</script>")//"&lt;script&gt;alert('hi')&lt;/scr
 crypto.reverse("Hello World")//"dlroW olleH"
 
 ```
-<<<<<<< HEAD
-deneme
-=======
->>>>>>> bf8c13341cd19b648b17b80aa9489cf278085e4f
