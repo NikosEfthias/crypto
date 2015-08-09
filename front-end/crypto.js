@@ -24,8 +24,7 @@ function Crypto(){
 		return w;
 	};
 	this.crypto= function(num) {
-		var chars = 'abcdefghijklmnoprstuvyzxqw$ABCDEFGHIJKLMNOPRSTUVYZXQW123456790+-*/~!@#$%^&*()_-=|\\\
-{}[]?/<>,.`'.split('');
+		var chars = 'abcdefghijklmnoprstuvyzxqw$ABCDEFGHIJKLMNOPRSTUVYZXQW123456790'.split('');
 		var crypto = [];
 		if (num) num = (num == 'max') ? chars.length : num;
 		else num = 7;
