@@ -1,6 +1,46 @@
-module.exports={
-Crypto :function(){
-	var a= function(str) {
+var util=require("util");
+function url(){
+	this.querify=function(obj){
+		var str="";
+	try{
+		for(i in obj){
+			if(!i)continue;
+			str+="&"+i+"="+obj[i];
+		}
+		str=str.replace(/^&/,"?");
+		return str;
+	}
+	catch(e){
+		console.error("Invalid Object");
+		return !1;
+	}};
+	this.objectify=function(urlStr){
+		var obj={};
+		try{
+			urlStr=urlStr.replace(/^\?/,"");
+			var a=urlStr.split("&"),len=a.length;
+			while(len--){
+				obj[a[len].split("=")[0]]=a[len].split("=")[1];
+			}
+			return obj;
+		}
+		catch(err){
+			console.error("Invalid Input");
+			return !1;
+		}};
+		this.parseGet=function(url){
+			var url=url||window.location.href,
+			pattern=/.*?\?(.*)/,
+			match=pattern.exec(url)[1],
+			couples=match.split("&"),obj={},len=couples.length;
+		while(len--){
+			obj[couples[len].split("=")[0]]=couples[len].split("=")[1];
+		}
+		return obj;
+	}
+}
+function Crypto(){
+var a= function(str) {
 		var x = 0,
 			y = [],
 			a = str.length;
@@ -82,6 +122,9 @@ Crypto :function(){
 		str = str.replace(/</g, '&lt;');
 		str = str.replace(/>/g, '&gt;');
 		return str;
-
 	};
-}}
+}
+Crypto.prototype=new url;
+Crypto.prototype.constructor=Crypto;
+a=new Crypto;
+module.exports.Crypto=a;
