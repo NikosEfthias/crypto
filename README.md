@@ -7,8 +7,7 @@ var crypto=new Crypto
 ```
 ```javascript
 //node.js way
-var crypto=require('crypto');
-crypto=new crypto.Crypto
+var crypto=require('crypto').Crypto;
 ```
 ####Methods :
 ```javascript
