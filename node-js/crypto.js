@@ -1,4 +1,3 @@
-var util=require("util");
 function url(){
 	this.querify=function(obj){
 		var str="";
@@ -30,7 +29,7 @@ function url(){
 		}};
 		this.parseGet=function(url){
 			var url=url||window.location.href,
-			pattern=/.*?\?(.*)/,
+			pattern=/\?(.*)/,
 			match=pattern.exec(url)[1],
 			couples=match.split("&"),obj={},len=couples.length;
 		while(len--){
